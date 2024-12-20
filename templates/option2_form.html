@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Option 2: Create a playlist from user prompt</h2>
+<form action="/option2" method="post">
+    Number of songs (max 50): <input type="text" name="num_songs" value="10"><br>
+    Description: <input type="text" name="description"><br>
+    <input type="text" name="new_playlist_name" placeholder="New Playlist Name"><br>
+    <input type="submit" value="Create">
+</form>
+<a href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}

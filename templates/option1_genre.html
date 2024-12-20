@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Top 10 genres:</h2>
+<ul>
+{% for g, c in top_genres %}
+    <li>{{g}} ({{c}} tracks)</li>
+{% endfor %}
+</ul>
+<form action="/option1genre" method="post">
+    <input type="hidden" name="playlist_id" value="{{ playlist_id }}">
+    <input type="hidden" name="new_playlist_name" value="{{ new_playlist_name }}">
+    Enter genres (comma separated): <input type="text" name="genres"><br>
+    <input type="submit" value="Filter and Create Playlist">
+</form>
+<a href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}

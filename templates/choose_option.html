@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Select a playlist for Option 1</h2>
+<form action="/option1" method="post">
+    <select name="playlist_id">
+    {% for p in playlists %}
+        <option value="{{ p.id }}">{{ p.name }} ({{ p.id }})</option>
+    {% endfor %}
+    </select><br>
+    Choose action:
+    <select name="action">
+        <option value="release">Sort by release date</option>
+        <option value="popularity">Sort by popularity</option>
+        <option value="genre">Extract specific genre</option>
+    </select><br>
+    <input type="text" name="new_playlist_name" placeholder="New Playlist Name"><br>
+    <input type="submit" value="Go">
+</form>
+<a href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}

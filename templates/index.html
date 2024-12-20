@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Choose an option:</h2>
+<form action="/choose" method="post">
+    <select name="option">
+        <option value="1">1. Create a new playlist from existing playlist (no GPT)</option>
+        <option value="2">2. Create a new playlist based on user prompt (GPT)</option>
+        <option value="3">3. Analyze a playlist to give recommendations (GPT)</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

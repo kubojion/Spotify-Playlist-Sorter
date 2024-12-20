@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Select a playlist to analyze</h2>
+<form action="/option3" method="post">
+    <select name="playlist_id">
+    {% for p in playlists %}
+        <option value="{{ p.id }}">{{ p.name }} ({{ p.id }})</option>
+    {% endfor %}
+    </select><br>
+    <input type="text" name="new_playlist_name" placeholder="New Playlist Name"><br>
+    <input type="submit" value="Analyze">
+</form>
+<a href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}
